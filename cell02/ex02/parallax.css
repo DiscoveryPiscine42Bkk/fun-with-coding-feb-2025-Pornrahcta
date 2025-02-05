@@ -1,0 +1,37 @@
+.uparallax, .dparallax {
+    /* The image used */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 700px; 
+
+    /* Centering text */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+.uparallax {
+    background-image: url("https://hips.hearstapps.com/hmg-prod/images/ama-dablam-mountain-peak-view-from-chola-pass-royalty-free-image-1623254695.jpg");
+}
+
+.dparallax {
+    background-image: url("https://images.unsplash.com/photo-1439066290691-510066268af5?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c3VtbWVyJTIwbGFrZXxlbnwwfHwwfHx8MA%3D%3D");
+}
+
+.box {
+    height: 700px;
+    background-color: black;
+
+    /* Centering text */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 3rem;
+}
