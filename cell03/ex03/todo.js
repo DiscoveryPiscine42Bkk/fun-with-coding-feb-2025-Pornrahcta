@@ -1,10 +1,10 @@
 function getTodos() {
-  return document.cookie.split('; ').find(row => row.startsWith('todos='))?.split('=')[1] || '';
+  return decodeURIComponent(document.cookie.split('; ').find(row => row.startsWith('todos='))?.split('=')[1] || '');
 }
 
 function saveTodos() {
   let todos = Array.from(document.querySelectorAll('.todo')).map(todo => todo.innerText);
-  document.cookie = `todos=${encodeURIComponent('Test Todo')};expires=Fri, 31 Dec 9999 23:59:59 GMT`;
+  document.cookie = `todos=${encodeURIComponent(todos.join('|'))};expires=Fri, 31 Dec 9999 23:59:59 GMT`;
 }
 
 function insertList() {
