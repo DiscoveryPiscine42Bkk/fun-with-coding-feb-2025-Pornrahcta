@@ -44,3 +44,7 @@ function loadTodos() {
 $(document).ready(function() {
   loadTodos();
 });
+
+$('#insert_button').on('click', function() { 
+  insertList(); 
+});
