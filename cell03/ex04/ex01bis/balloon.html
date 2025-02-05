@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .balloon {
+          width: 200px;
+          height: 200px;
+          background-color: red;
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          margin: auto;
+          border-radius: 100px;
+        }
+      </style>
+</head>
+<body>
+    <div class="balloon"></div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+    $(".balloon").on("click", function (event) {
+        var $balloon = $(this);
+
+        var size = parseInt($balloon.css("width")) + 10;
+        if (size > 420) {
+          size = 200;
+        }
+        $balloon.css({
+          borderRadius: size + "px",
+          width: size + "px",
+          height: size + "px",
+        });
+
+        // Color
+        var currentColor = $balloon.css("background-color");
+        var newColor;
+
+        if (currentColor === "rgb(255, 0, 0)")
+          // red
+          newColor = "green";
+        else if (currentColor === "rgb(0, 128, 0)")
+          // green
+          newColor = "blue";
+        else newColor = "red";
+
+        $balloon.css({
+          backgroundColor: newColor,
+        });
+      });
+
+      $(".balloon").on("mouseleave", function (event) {
+        var $balloon = $(this);
+
+        var size = parseInt($balloon.css("width")) - 5;
+        if (size < 200) {
+          size = 200;
+        }
+        $balloon.css({
+          borderRadius: size + "px",
+          width: size + "px",
+          height: size + "px",
+        });
+
+        // Color
+        var currentColor = $balloon.css("background-color");
+        var newColor;
+
+        if (currentColor === "rgb(255, 0, 0)")
+          // red
+          newColor = "green";
+        else if (currentColor === "rgb(0, 128, 0)")
+          // green
+          newColor = "blue";
+        else newColor = "red";
+
+        $balloon.css({
+          backgroundColor: newColor,
+        });
+      });
+</script>
+</html>

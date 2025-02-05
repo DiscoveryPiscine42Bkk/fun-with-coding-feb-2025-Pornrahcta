@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #f4f4f4;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        input, select, button {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>Calculator</h3>
+        <input id="i1" type="text" placeholder="Enter first instance">
+        <input id="i2" type="text" placeholder="Enter second instance">
+        <select id="operator">
+            <option value="" disabled>Select an operator</option>
+            <option value="sum">+</option>
+            <option value="subtract">-</option>
+            <option value="multiply">*</option>
+            <option value="divide">/</option>
+            <option value="modulation">%</option>
+        </select>
+        <button id="submit">Try me!</button>
+    </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+    $("#submit").on("click", function (event) {
+        var instance1 = Number(document.getElementById("i1").value);
+        var instance2 = Number(document.getElementById("i2").value);
+        var operator = document.getElementById("operator");
+        let operatedValue = operator.options[operator.selectedIndex].value;
+
+        if (((operatedValue === 'divide') || (operatedValue === 'modulation')) && instance2 === 0) {
+            alert("It's Over 9000!");
+            document.getElementById("i1").value = "";
+            document.getElementById("i2").value = "";
+        } else if (isNaN(instance1) || isNaN(instance2) || (instance1 < 0) || (instance2) < 0) {
+            alert("Error :(");
+            console.log("Error :(")
+            document.getElementById("i1").value = "";
+            document.getElementById("i2").value = "";
+        } else {
+            if (operatedValue === 'sum') {
+                alert(instance1 + instance2);
+                console.log(instance1 + instance2);
+                document.getElementById("i1").value = "";
+                document.getElementById("i2").value = "";
+            } else if (operatedValue == 'subtract') {
+                alert(instance1 - instance2);
+                console.log(instance1 - instance2);
+                document.getElementById("i1").value = "";
+                document.getElementById("i2").value = "";
+            } else if (operatedValue == 'multiply') {
+                alert(instance1 * instance2);
+                console.log(instance1 * instance2);
+                document.getElementById("i1").value = "";
+                document.getElementById("i2").value = "";
+            } else if (operatedValue == 'divide') {
+                alert(instance1 / instance2);
+                console.log(instance1 / instance2);
+                document.getElementById("i1").value = "";
+                document.getElementById("i2").value = "";
+            } else if (operatedValue == 'modulation') {
+                alert(instance1 % instance2);
+                console.log(instance1 % instance2);
+                document.getElementById("i1").value = "";
+                document.getElementById("i2").value = "";
+            }
+        }
+    });
+
+    setInterval(() => {
+        alert("Please, use me...")
+    }, 30000);
+</script>
+</html>
