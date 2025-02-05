@@ -60,46 +60,45 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script>
     $("#submit").on("click", function (event) {
-        var instance1 = Number(document.getElementById("i1").value);
-        var instance2 = Number(document.getElementById("i2").value);
-        var operator = document.getElementById("operator");
-        let operatedValue = operator.options[operator.selectedIndex].value;
+        var instance1 = Number($("#i1").val());
+        var instance2 = Number($("#i2").val()); // $("#i2").val();
+        var operatedValue = $("#operator").val();
 
         if (((operatedValue === 'divide') || (operatedValue === 'modulation')) && instance2 === 0) {
             alert("It's Over 9000!");
-            document.getElementById("i1").value = "";
-            document.getElementById("i2").value = "";
+            $("#i1").val() = "";
+            $("#i2").val() = "";
         } else if (isNaN(instance1) || isNaN(instance2) || (instance1 < 0) || (instance2) < 0) {
             alert("Error :(");
             console.log("Error :(")
-            document.getElementById("i1").value = "";
-            document.getElementById("i2").value = "";
+            $("#i1").val() = "";
+            $("#i2").val() = "";
         } else {
             if (operatedValue === 'sum') {
                 alert(instance1 + instance2);
                 console.log(instance1 + instance2);
-                document.getElementById("i1").value = "";
-                document.getElementById("i2").value = "";
+                $("#i1").val() = "";
+                $("#i2").val() = "";
             } else if (operatedValue == 'subtract') {
                 alert(instance1 - instance2);
                 console.log(instance1 - instance2);
-                document.getElementById("i1").value = "";
-                document.getElementById("i2").value = "";
+                $("#i1").val() = "";
+                $("#i2").val() = "";
             } else if (operatedValue == 'multiply') {
                 alert(instance1 * instance2);
                 console.log(instance1 * instance2);
-                document.getElementById("i1").value = "";
-                document.getElementById("i2").value = "";
+                $("#i1").val() = "";
+                $("#i2").val() = "";
             } else if (operatedValue == 'divide') {
                 alert(instance1 / instance2);
                 console.log(instance1 / instance2);
-                document.getElementById("i1").value = "";
-                document.getElementById("i2").value = "";
+                $("#i1").val() = "";
+                $("#i2").val() = "";
             } else if (operatedValue == 'modulation') {
                 alert(instance1 % instance2);
                 console.log(instance1 % instance2);
-                document.getElementById("i1").value = "";
-                document.getElementById("i2").value = "";
+                $("#i1").val() = "";
+                $("#i2").val() = "";
             }
         }
     });

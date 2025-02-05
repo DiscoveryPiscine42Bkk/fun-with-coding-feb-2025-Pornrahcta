@@ -14,10 +14,8 @@ function insertList() {
   let text = prompt("Enter a new TO DO list:");
   if (text) {
       // Create box containing the todo list
-      let div = $('<div></div>', {
-        class: 'todo',
-        text: text,
-        click: function() { removeList(div); }
+      let div = $('<div></div>').addClass('todo').text(text).on('click', function() { 
+        removeList(div); 
       });
       $('#ft_list').prepend(div);
       saveTodos();
@@ -35,11 +33,9 @@ function loadTodos() {
   let savedTodos = getTodos();
   if (savedTodos) {
       savedTodos.split('|').forEach(function(text) {
-          let div = $('<div></div>', {
-            class: 'todo',
-            text: text,
-            click: function() { removeList(div); }
-          });
+        let div = $('<div></div>').addClass('todo').text(text).on('click', function() { 
+          removeList(div); 
+        });
           $('#ft_list').append(div);
       });
   }
