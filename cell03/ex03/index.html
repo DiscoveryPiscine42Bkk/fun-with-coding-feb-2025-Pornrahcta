@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      body { 
+          font-family: Arial,sans-serif; 
+          text-align: center; 
+      }
+      #ft_list { 
+          padding: 14px; 
+          border: 1px solid #000; 
+          width: 300px; 
+          margin: auto; 
+      }
+      .todo { 
+          padding: 10px; 
+          background: rgb(254, 254, 254); 
+          margin-top: 5px; 
+          cursor: pointer; 
+      }
+      button { 
+          padding: 10px; 
+          cursor: pointer;
+          color: #f4f4f4;
+          background-color: rgb(110, 110, 238); 
+          border-radius: 50%;
+          width: 100px;
+          margin: 20px;
+      }
+      .content{
+          background-color: rgb(211, 220, 253);
+          width: 35vw;
+          height: 100vh;
+          margin: auto auto;
+          padding: 10px;
+          border-radius: 5%;
+      }
+    </style>
+</head>
+<body>
+  <div class="content">
+    <h1>To-do list</h1>
+    <button onclick="insertList()">Insert List</button>
+    <div id="ft_list"></div>
+    <script src="./todo.js"></script>
+  </div>
+</body>
+</html>
