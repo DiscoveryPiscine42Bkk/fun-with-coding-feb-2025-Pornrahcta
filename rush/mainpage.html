@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Gateway</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-Image: url('https://cdn.mos.cms.futurecdn.net/sEoeyvUbZCESaRbMwNXGPi-1186-80.jpg');
+            margin: 0;
+
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            transition: background-Image 0.5s;
+        }
+        .text-container {
+            text-align: center;
+            color: white;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        .text-container h1 {
+            font-size: 40px;
+            margin: 0;
+        }
+        .text-container p {
+            font-size: 32px;
+            margin: 5px 0 15px;
+        }
+        .box {
+            width: 90%;
+            height: 600px;
+            background-color: rgba(255, 255, 255, 0.60);;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .btn {
+            width: 250px;
+            height: 100px;
+            padding: 10px 20px;
+            margin: 80px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            font-size: 16px;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        @media (max-width: 640px) {
+            .text-container h1 {
+                font-size: 28px;
+            }
+            .text-container p {
+                font-size: 22px;
+            }
+            .box {
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: auto; /* Allow the box to resize */
+            }
+            .btn {
+                width: 200px;
+                height: 80px;
+                margin: 10px 0; /* Move buttons to new row */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="text-container">
+        <h1>Welcome to Gateway</h1>
+        <p>choose your destination to explore below...</p>
+    </div>
+    <div class="box">
+        <button id="g1" onclick="location.href='pyuthara/index.html'" class="btn">PYUTHARA</button>
+        <button id="g2" onclick="location.href='parongde/index.html'" class="btn">PARONGDE</button>
+    </div>
+</body>
+<script>
+    document.getElementById("g1").addEventListener("mouseenter", function (event) {
+        document.body.style.backgroundImage = "url('https://hips.hearstapps.com/hmg-prod/images/ama-dablam-mountain-peak-view-from-chola-pass-royalty-free-image-1623254695.jpg')";
+    });
+    document.getElementById("g2").addEventListener("mouseenter", function (event) {
+        document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1439066290691-510066268af5?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c3VtbWVyJTIwbGFrZXxlbnwwfHwwfHx8MA%3D%3D')";
+    });
+    document.getElementById("g1").addEventListener("mouseout", function (event) {
+        document.body.style.backgroundImage = "url('https://cdn.mos.cms.futurecdn.net/sEoeyvUbZCESaRbMwNXGPi-1186-80.jpg')";
+    });
+    document.getElementById("g2").addEventListener("mouseout", function (event) {
+        document.body.style.backgroundImage = "url('https://cdn.mos.cms.futurecdn.net/sEoeyvUbZCESaRbMwNXGPi-1186-80.jpg')";
+    });
+</script>
+</html>
