@@ -449,6 +449,7 @@ ul li a:hover {
 
 .project_info img {
   height: auto; /* ปรับให้ความสูงอัตโนมัติ */
+  width: 600px;
   max-width: 100%; /* ให้รูปภาพปรับขนาดตาม container */
   border-radius: 1.5rem;
 }
@@ -474,6 +475,7 @@ ul li a:hover {
   .project_info img {
     height: auto;
     max-width: 100%;
+    width: 100px;
   }
 
   .project_info p {
@@ -502,6 +504,131 @@ ul li a:hover {
   }
 }
 
+
+
+
+/* Contact Section */
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: var(--extra-light);
+}
+
+.contact h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: black;
+  margin-bottom: 1rem;
+}
+
+.contact form {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.contact .input-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.contact .input-box {
+  flex: 1 1 45%; /* ให้แต่ละ input-box มีความกว้าง 45% ของ container */
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact .input-box input,
+.contact textarea {
+  width: 100%;
+  padding: 1.5rem;
+  font-size: 1.6rem;
+  color: var(--text-color);
+  background-color: var(--second-bg-color);
+  border-radius: 1rem;
+  border: 2px solid var(--text-dark);
+  transition: border-color 0.3s ease;
+}
+
+.contact .input-box input:focus,
+.contact textarea:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact textarea {
+  resize: vertical; /* ให้ปรับความสูงได้เฉพาะแนวตั้ง */
+  min-height: 150px;
+}
+
+.contact .input-group-2 {
+  margin-top: 2rem;
+}
+
+.contact .btn {
+  padding: 1.5rem 3rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: white;
+  background-color: var(--text-dark);
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 2rem;
+}
+
+.contact .btn:hover {
+  background-color: var(--text-light);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .contact .input-box {
+    flex: 1 1 100%; /* ให้แต่ละ input-box มีความกว้าง 100% บนหน้าจอเล็ก */
+  }
+
+  .contact .input-group {
+    gap: 1rem;
+  }
+
+  .contact .input-box input,
+  .contact textarea {
+    padding: 1.2rem;
+    font-size: 1.4rem;
+  }
+
+  .contact .btn {
+    padding: 1.2rem 2.5rem;
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact h1 {
+    font-size: 2rem;
+  }
+
+  .contact .input-box input,
+  .contact textarea {
+    padding: 1rem;
+    font-size: 1.2rem;
+  }
+
+  .contact .btn {
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+  }
+}
 
 
 
